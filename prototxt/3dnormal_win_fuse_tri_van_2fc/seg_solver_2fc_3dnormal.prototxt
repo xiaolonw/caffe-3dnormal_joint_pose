@@ -1,0 +1,15 @@
+train_net: "/nfs/hn46/xiaolonw/cnncode/caffe-3dnormal_r_n/prototxt/3dnormal_win_fuse_tri_van_2fc/seg_train_2fc_3dnormal.prototxt"
+base_lr: 0.000001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 220000
+display: 5
+max_iter: 500000
+momentum: 0.9
+weight_decay: 0.0005
+#snapshot: 10000
+snapshot: 15000
+snapshot_prefix: "/home/xiaolonw/3ddata/3dnormal_win_cls_high/models/3dnormal_win_fuse_tri_van_2fc/3dnormal_"
+#solver_mode: 0
+solver_mode: GPU
+device_id: 2

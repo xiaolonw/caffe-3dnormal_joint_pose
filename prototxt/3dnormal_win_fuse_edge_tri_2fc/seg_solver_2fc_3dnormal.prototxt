@@ -1,0 +1,15 @@
+train_net: "/N/u/xiaolonw/cnncode/caffe-3dnormal_r_n/fuseprototxt/3dnormal_win_fuse_edge_tri/seg_train_2fc_3dnormal.prototxt"
+base_lr: 0.000001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 240000
+display: 5
+max_iter: 500000
+momentum: 0.9
+weight_decay: 0.0005
+#snapshot: 20000
+snapshot: 20000
+snapshot_prefix: "/N/u/xiaolonw/cnncode/fuse_cls/models/3d_train_slv_edge_tri_2fc/3dnormal_"
+#solver_mode: 0
+solver_mode: GPU
+device_id: 0

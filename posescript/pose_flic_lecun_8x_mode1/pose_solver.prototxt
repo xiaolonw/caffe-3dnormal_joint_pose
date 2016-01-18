@@ -1,0 +1,17 @@
+train_net: "/nfs/hn46/xiaolonw/pose_cnncode/caffe-3dnormal_joint_pose/posescript/pose_flic_lecun_8x_mode1/pose_train.prototxt"
+base_lr: 0.0001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 15000
+display: 5
+max_iter: 50000
+momentum: 0.9
+weight_decay: 0.0005
+#snapshot: 10000
+snapshot: 5000
+snapshot_prefix: "/nfs/hn38/users/xiaolonw/pose_models/flic_coarse_lecun_8x_mode1/pose_"
+#solver_mode: 0
+solver_mode: GPU
+device_id: 7
+
+

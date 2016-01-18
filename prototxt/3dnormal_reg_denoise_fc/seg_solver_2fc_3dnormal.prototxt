@@ -1,0 +1,15 @@
+train_net: "/N/u/xiaolonw/cnncode/caffe-3dnormal_r_n/prototxt/3dnormal_reg_denoise_fc/seg_train_2fc_3dnormal.prototxt"
+base_lr: 0.0000001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 200000
+display: 5
+max_iter: 450000
+momentum: 0.9
+weight_decay: 0.0005
+#snapshot: 10000
+snapshot: 10000
+snapshot_prefix: "/N/u/xiaolonw/cnncode/models/models_reg_n_acos_fc/3dnormal_"
+#solver_mode: 0
+solver_mode: GPU
+device_id: 1

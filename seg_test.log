@@ -1,0 +1,101 @@
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+E0816 16:53:37.984699 16352 test_net_3d.cpp:120] Using GPU
+I0816 16:53:37.985862 16352 net.cpp:64] Memory required for Data0
+I0816 16:53:37.985901 16352 net.cpp:75] Creating Layer data_55
+I0816 16:53:37.985908 16352 net.cpp:111] data_55 -> data_55
+I0816 16:53:37.985921 16352 net.cpp:111] data_55 -> label_3dup
+I0816 16:53:37.985940 16352 data_layer.cpp:219] Opening leveldb /home/dragon123/cnncode/caffe-wxl/models/3ddb/3d_train_db_test
+I0816 16:53:38.108400 16352 data_layer.cpp:262] output data size: 15,3,55,55
+I0816 16:53:38.108414 16352 data_layer.cpp:283] Loading mean file from/home/dragon123/cnncode/caffe-wxl/models/3ddb/3d_mean.binaryproto
+I0816 16:53:38.108878 16352 data_layer.cpp:304] Initializing prefetch
+I0816 16:53:38.108906 16352 data_layer.cpp:306] Prefetch initialized.
+I0816 16:53:38.108912 16352 net.cpp:126] Top shape: 15 3 55 55 (136125)
+I0816 16:53:38.108916 16352 net.cpp:126] Top shape: 15 2500 1 1 (37500)
+I0816 16:53:38.108917 16352 net.cpp:134] Memory  required for Data 694500
+I0816 16:53:38.108922 16352 net.cpp:157] data_55 does not need backward computation.
+I0816 16:53:38.108934 16352 net.cpp:75] Creating Layer conv2_55
+I0816 16:53:38.108938 16352 net.cpp:85] conv2_55 <- data_55
+I0816 16:53:38.108950 16352 net.cpp:111] conv2_55 -> conv2_55
+I0816 16:53:38.110440 16352 net.cpp:126] Top shape: 15 256 51 51 (9987840)
+I0816 16:53:38.110445 16352 net.cpp:134] Memory  required for Data 40645860
+I0816 16:53:38.110446 16352 net.cpp:152] conv2_55 needs backward computation.
+I0816 16:53:38.110462 16352 net.cpp:75] Creating Layer relu2_55
+I0816 16:53:38.110465 16352 net.cpp:85] relu2_55 <- conv2_55
+I0816 16:53:38.110471 16352 net.cpp:99] relu2_55 -> conv2_55 (in-place)
+I0816 16:53:38.110474 16352 net.cpp:126] Top shape: 15 256 51 51 (9987840)
+I0816 16:53:38.110476 16352 net.cpp:134] Memory  required for Data 40645860
+I0816 16:53:38.110478 16352 net.cpp:152] relu2_55 needs backward computation.
+I0816 16:53:38.110482 16352 net.cpp:75] Creating Layer pool2_55
+I0816 16:53:38.110486 16352 net.cpp:85] pool2_55 <- conv2_55
+I0816 16:53:38.110488 16352 net.cpp:111] pool2_55 -> pool2_55
+I0816 16:53:38.110505 16352 net.cpp:126] Top shape: 15 256 25 25 (2400000)
+I0816 16:53:38.110507 16352 net.cpp:134] Memory  required for Data 50245860
+I0816 16:53:38.110509 16352 net.cpp:152] pool2_55 needs backward computation.
+I0816 16:53:38.110523 16352 net.cpp:75] Creating Layer norm2_55
+I0816 16:53:38.110525 16352 net.cpp:85] norm2_55 <- pool2_55
+I0816 16:53:38.110527 16352 net.cpp:111] norm2_55 -> norm2_55
+I0816 16:53:38.110534 16352 net.cpp:126] Top shape: 15 256 25 25 (2400000)
+I0816 16:53:38.110538 16352 net.cpp:134] Memory  required for Data 59845860
+I0816 16:53:38.110539 16352 net.cpp:152] norm2_55 needs backward computation.
+I0816 16:53:38.110553 16352 net.cpp:75] Creating Layer conv3_55
+I0816 16:53:38.110555 16352 net.cpp:85] conv3_55 <- norm2_55
+I0816 16:53:38.110558 16352 net.cpp:111] conv3_55 -> conv3_55
+I0816 16:53:38.173718 16352 net.cpp:126] Top shape: 15 384 25 25 (3600000)
+I0816 16:53:38.173725 16352 net.cpp:134] Memory  required for Data 74245860
+I0816 16:53:38.173727 16352 net.cpp:152] conv3_55 needs backward computation.
+I0816 16:53:38.173732 16352 net.cpp:75] Creating Layer relu3_55
+I0816 16:53:38.173735 16352 net.cpp:85] relu3_55 <- conv3_55
+I0816 16:53:38.173739 16352 net.cpp:99] relu3_55 -> conv3_55 (in-place)
+I0816 16:53:38.173743 16352 net.cpp:126] Top shape: 15 384 25 25 (3600000)
+I0816 16:53:38.173744 16352 net.cpp:134] Memory  required for Data 74245860
+I0816 16:53:38.173745 16352 net.cpp:152] relu3_55 needs backward computation.
+I0816 16:53:38.173749 16352 net.cpp:75] Creating Layer conv4_55
+I0816 16:53:38.173751 16352 net.cpp:85] conv4_55 <- conv3_55
+I0816 16:53:38.173753 16352 net.cpp:111] conv4_55 -> conv4_55
+I0816 16:53:38.221248 16352 net.cpp:126] Top shape: 15 384 25 25 (3600000)
+I0816 16:53:38.221258 16352 net.cpp:134] Memory  required for Data 88645860
+I0816 16:53:38.221261 16352 net.cpp:152] conv4_55 needs backward computation.
+I0816 16:53:38.221271 16352 net.cpp:75] Creating Layer relu4_55
+I0816 16:53:38.221276 16352 net.cpp:85] relu4_55 <- conv4_55
+I0816 16:53:38.221282 16352 net.cpp:99] relu4_55 -> conv4_55 (in-place)
+I0816 16:53:38.221284 16352 net.cpp:126] Top shape: 15 384 25 25 (3600000)
+I0816 16:53:38.221287 16352 net.cpp:134] Memory  required for Data 88645860
+I0816 16:53:38.221287 16352 net.cpp:152] relu4_55 needs backward computation.
+I0816 16:53:38.221292 16352 net.cpp:75] Creating Layer conv5_55
+I0816 16:53:38.221294 16352 net.cpp:85] conv5_55 <- conv4_55
+I0816 16:53:38.221307 16352 net.cpp:111] conv5_55 -> conv5_55
+I0816 16:53:38.253170 16352 net.cpp:126] Top shape: 15 256 25 25 (2400000)
+I0816 16:53:38.253177 16352 net.cpp:134] Memory  required for Data 98245860
+I0816 16:53:38.253180 16352 net.cpp:152] conv5_55 needs backward computation.
+I0816 16:53:38.253183 16352 net.cpp:75] Creating Layer relu5_55
+I0816 16:53:38.253186 16352 net.cpp:85] relu5_55 <- conv5_55
+I0816 16:53:38.253190 16352 net.cpp:99] relu5_55 -> conv5_55 (in-place)
+I0816 16:53:38.253193 16352 net.cpp:126] Top shape: 15 256 25 25 (2400000)
+I0816 16:53:38.253196 16352 net.cpp:134] Memory  required for Data 98245860
+I0816 16:53:38.253196 16352 net.cpp:152] relu5_55 needs backward computation.
+I0816 16:53:38.253201 16352 net.cpp:75] Creating Layer pool5_55
+I0816 16:53:38.253202 16352 net.cpp:85] pool5_55 <- conv5_55
+I0816 16:53:38.253206 16352 net.cpp:111] pool5_55 -> pool5_55
+I0816 16:53:38.253221 16352 net.cpp:126] Top shape: 15 256 12 12 (552960)
+I0816 16:53:38.253223 16352 net.cpp:134] Memory  required for Data 100457700
+I0816 16:53:38.253226 16352 net.cpp:152] pool5_55 needs backward computation.
+I0816 16:53:38.253229 16352 net.cpp:75] Creating Layer fc8_3dup
+I0816 16:53:38.253232 16352 net.cpp:85] fc8_3dup <- pool5_55
+I0816 16:53:38.253234 16352 net.cpp:111] fc8_3dup -> fc8_3dup
+I0816 16:53:44.852519 16352 net.cpp:126] Top shape: 15 2500 1 1 (37500)
+I0816 16:53:44.852535 16352 net.cpp:134] Memory  required for Data 100607700
+I0816 16:53:44.852537 16352 net.cpp:152] fc8_3dup needs backward computation.
+I0816 16:53:44.852545 16352 net.cpp:75] Creating Layer sigmoid_3dup
+I0816 16:53:44.852550 16352 net.cpp:85] sigmoid_3dup <- fc8_3dup
+I0816 16:53:44.852557 16352 net.cpp:99] sigmoid_3dup -> fc8_3dup (in-place)
+I0816 16:53:44.852561 16352 net.cpp:126] Top shape: 15 2500 1 1 (37500)
+I0816 16:53:44.852573 16352 net.cpp:134] Memory  required for Data 100607700
+I0816 16:53:44.852576 16352 net.cpp:152] sigmoid_3dup needs backward computation.
+I0816 16:53:44.852579 16352 net.cpp:75] Creating Layer loss_3dup
+I0816 16:53:44.852581 16352 net.cpp:85] loss_3dup <- fc8_3dup
+I0816 16:53:44.852583 16352 net.cpp:85] loss_3dup <- label_3dup
+I0816 16:53:44.852587 16352 net.cpp:134] Memory  required for Data 100607700
+I0816 16:53:44.852591 16352 net.cpp:152] loss_3dup needs backward computation.
+I0816 16:53:44.852617 16352 net.cpp:181] Collecting Learning Rate and Weight Decay.
+I0816 16:53:44.852632 16352 net.cpp:174] Network initialization done.
+I0816 16:53:44.852634 16352 net.cpp:175] Memory required for Data 100607700

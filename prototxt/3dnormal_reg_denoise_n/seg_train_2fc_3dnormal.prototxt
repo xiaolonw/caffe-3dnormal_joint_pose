@@ -1,0 +1,114 @@
+name: "3dup_1fc"
+layers {
+  name: "data_reg"
+  type: DATA
+  top: "data_reg"
+  top: "label_reg"
+  data_param {
+    source: "/nfs/ladoga_no_backups/users/xiaolonw/3dnormal_data/train_test_cross/3d_train_db_reg_copy1"
+    mean_file: "/nfs/ladoga_no_backups/users/xiaolonw/3dnormal_data/train_test_cross/3d_train_db_reg/3d_mean.binaryproto"
+    batch_size: 100
+    crop_size: 0
+    mirror: false
+  }
+}
+layers {
+  name: "conv2_reg"
+  type: CONVOLUTION
+  bottom: "data_reg"
+  top: "conv2_reg"
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 64
+    pad: 2
+    kernel_size: 5
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layers {
+  name: "relu2_reg"
+  type: RELU
+  bottom: "conv2_reg"
+  top: "conv2_reg"
+}
+
+
+layers {
+  name: "conv3_reg"
+  type: CONVOLUTION
+  bottom: "conv2_reg"
+  top: "conv3_reg"
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 64
+    pad: 2
+    kernel_size: 5
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layers {
+  name: "relu3_reg"
+  type: RELU
+  bottom: "conv3_reg"
+  top: "conv3_reg"
+}
+
+layers {
+  name: "conv4_reg"
+  type: CONVOLUTION
+  bottom: "conv3_reg"
+  top: "conv4_reg"
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 3
+    pad: 2
+    kernel_size: 5
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+
+
+layers {
+  name: "norm1_reg"
+  type: NORM
+  bottom: "conv4_reg"
+  top: "norm1_reg"
+}
+
+
+layers {
+  name: "loss_3dnorm"
+  type: EUCLIDEAN_LOSS
+  bottom: "norm1_reg"
+  bottom: "label_reg"
+}

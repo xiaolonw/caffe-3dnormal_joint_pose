@@ -1,0 +1,17 @@
+Note:the data labels for now are having the opposite values(realv = 1 - v), thus I need to reverse it in some parts of the code.
+
+training:
+(1) scripts/3dupper/convert_3dupper.sh  (transfer data to lebels)
+(2) scripts/3dupper/train_3dnet.sh  (training)
+
+测试
+(3) scripts/3dupper/getLabel.sh (preparing labels.txt given the leveldb)
+(4) scripts/3dupper/test_3dnet.sh (testing)
+
+
+
+要改：
+
+(1) 收集数据01label取反
+(2) test prototxt写多了个无用layer,改test的code
+(3) multisoftmax 用了#define LABEL_LEN 20

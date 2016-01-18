@@ -1,0 +1,6 @@
+convert_upface:
+
+GLOG_logtostderr=1 convert_upface.bin imageDir label.txt db   0  1    55       55
+                               0         1         2      3   4  5  resize6  resize7
+
+
