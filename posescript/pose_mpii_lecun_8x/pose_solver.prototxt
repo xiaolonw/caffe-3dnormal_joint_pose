@@ -1,0 +1,16 @@
+train_net: "/nfs/hn46/xiaolonw/pose_cnncode/caffe-3dnormal_joint_pose2/posescript/pose_mpii_lecun_8x/pose_train.prototxt"
+base_lr: 0.0001
+# base_lr: 0.00001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 30000
+display: 5
+max_iter: 100000
+momentum: 0.9
+weight_decay: 0.0005
+#snapshot: 10000
+snapshot: 5000
+snapshot_prefix: "/nfs/hn38/users/xiaolonw/pose_models/mpii_coarse_8x/pose_"
+#solver_mode: 0
+solver_mode: GPU
+device_id: 0
